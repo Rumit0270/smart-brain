@@ -131,7 +131,7 @@ class App extends Component {
   }
 
   render() {
-    const { isSignedIn, imageUrl, route, boxes, isProfileOpened } = this.state;
+    const { isSignedIn, imageUrl, route, boxes, isProfileOpened, user } = this.state;
     return (
       <div className="App">
          <Particles className='particles'
@@ -142,7 +142,7 @@ class App extends Component {
         {isProfileOpened &&
           (
             <Modal>
-              <Profile isProfileOpened={isProfileOpened} toggleModal={this.toggleModal}></Profile>
+              <Profile isProfileOpened={isProfileOpened} toggleModal={this.toggleModal} user={user} loadUser={this.loadUser}></Profile>
             </Modal>
           )
 
